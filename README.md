@@ -1,6 +1,7 @@
 # Integer Operations Game
 
 This is an interactive Next.js app for practicing integer addition and subtraction using a visual number line and a character named Stacy. The app is designed for educational purposes and features sound, background images, and dynamic questions.
+
 Visit the deployed version here: https://integer-operations.vercel.app/
 ## Features
 
