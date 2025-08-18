@@ -33,24 +33,35 @@ export default function Page() {
   }
   return (
     <main className="flex min-h-screen flex-col items-center justify-top p-10"
-    style={{backgroundColor: "#f0f8ff",
-        backgroundImage: "url('/background1.jpg')",
-        backgroundSize: "cover",
-        backgroundRepeat: "no-repeat",
-        backgroundPosition: "center",}}>
+          style={{backgroundColor: "#f0f8ff",
+              backgroundImage: "url('/background1.jpg')",
+              backgroundSize: "cover",
+              backgroundRepeat: "no-repeat",
+              backgroundPosition: "center",}}
+    >
       <div className = "absolute flex-col items-center mb-10">
         <h1 className="text-2xl mb-4 text-center"
-        style={{fontWeight: "bold", backgroundColor:"white", padding: "5px", borderRadius: "10px"}}>
+            style={{fontWeight: "bold", 
+                    backgroundColor:"white", 
+                    padding: "5px", 
+                    borderRadius: "10px"}}>
           {question}
         </h1>
         <p className="text-l mb-4 text-left"
-        style={{backgroundColor:"white", padding: "5px", borderRadius: "10px", width: "fit-content"}}>Click on the number line to move the character to the answer. 
+           style={{backgroundColor:"white", 
+                  padding: "5px", 
+                  borderRadius: "10px", 
+                  width: "fit-content"}}>
+          Click on the number line to move the character to the answer. 
           Ask youself:<br></br>
           <li>1. Is this a subtraction or an addition?</li>
           <li>2. Which direction should Stacy move in?</li>
           <li>3. Is the second number a positive or a negative? Should Stacy U-turn?</li>
-          <li>4. By how many steps should Stacy move by?</li></p>
+          <li>4. By how many steps should Stacy move by?</li>
+        </p>
       </div>
+
+      {/* Character Component */}
       <div className="absolute flex-col items-center mb-10">
         {/*Character Image*/}
         <div className="flex flex-col items-center mt-10 relative">
@@ -68,7 +79,8 @@ export default function Page() {
 
         {/*Number Line*/}
         <div className="relative w-[1600px] h-16 border-t-2 border-black  mt-[410px]"
-          style={{ backgroundColor: "#e0ffff", borderRadius: "10px" }}>
+            style={{ backgroundColor: "#e0ffff", 
+                    borderRadius: "10px" }}>
           {/* Divide tick marks into columns */}
           <div className="flex w-full h-full">
             {numbers.map((num, i) => (
@@ -83,7 +95,8 @@ export default function Page() {
                 <button
                   className="absolute top-6 text-sm hover:bg-blue-200"
                   onClick={() => submitAnswer(num)}
-                  style={{ left: "50%", transform: "translateX(-50%)" }}
+                  style={{ left: "50%",
+                          transform: "translateX(-50%)" }}
                 >
                   {num}
                 </button>
@@ -99,7 +112,10 @@ export default function Page() {
       <div className="absolute flex items-center justify-center mt-[600px]">
         <button 
           className="mb-4 px-4 py-2 bg-red-500 text-white rounded hover:border-4 hover:border-black"
-          style={{width: "fit-content", height: "fit-content", fontSize: "30px", fontWeight:"bold"}}
+          style={{width: "fit-content", 
+                  height: "fit-content", 
+                  fontSize: "30px",
+                   fontWeight:"bold"}}
           onClick = {() => generateQuestion()}
         >GENERATE QUESTION</button>
       </div>
