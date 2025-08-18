@@ -19,7 +19,6 @@ export default function Page() {
 
   const moveChar = (num: number) => {
     setCharIndex(num + 20); // Adjust index to match array position
-
   };
 
   const generateQuestion = () => {
@@ -36,9 +35,6 @@ export default function Page() {
     if (num === correctAnswer) {
       setCharIcon("/right_answer.png");
       moveChar(num);
-      setTimeout(() => {
-        generateQuestion(); // Generate new question after 2 second
-      }, 2000);
     } else {
       setCharIcon("/wrong_answer.png");
     }
