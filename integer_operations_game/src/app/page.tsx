@@ -102,7 +102,7 @@ export default function Page() {
 
                 {/* Number label */}
                 <button
-                  className="absolute top-6 text-sm hover:bg-blue-200"
+                  className="absolute top-6 text-sm hover:bg-blue-200 text-black"
                   onClick={() => submitAnswer(num)}
                   style={{ left: "50%",
                           transform: "translateX(-50%)" }}
