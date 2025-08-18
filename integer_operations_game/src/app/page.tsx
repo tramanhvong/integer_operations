@@ -34,7 +34,7 @@ export default function Page() {
 
   const submitAnswer = (num: number) => {
     if (num === correctAnswer) {
-      setCharIcon("/right_anser.png");
+      setCharIcon("/right_answer.png");
       moveChar(num);
       setTimeout(() => {
         generateQuestion(); // Generate new question after 2 second
@@ -80,7 +80,7 @@ export default function Page() {
             src= {charIcon}
             alt="Character"
             style={{ width: "90.4px", height: "192px",
-              left: `calc(${(charIndex / 40) * 100}% - 93.75px)`, // 93.75px is half the image width
+              left: `calc(${(charIndex / 40) * 100}% - 43.7px)`, // 93.75px is half the image width
               position: "absolute",
               bottom:"-365px"
             }}
