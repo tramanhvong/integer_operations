@@ -42,7 +42,7 @@ export default function Page() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-top p-5"
           style={{backgroundColor: "#f0f8ff",
-              backgroundImage: "url('/background1.jpg')",
+              backgroundImage: "url('/background1.png')",
               backgroundSize: "cover",
               backgroundRepeat: "no-repeat",
               backgroundPosition: "center"}}>
