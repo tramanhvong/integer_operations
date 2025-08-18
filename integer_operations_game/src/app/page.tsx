@@ -51,14 +51,16 @@ export default function Page() {
             style={{fontWeight: "bold", 
                     backgroundColor:"white", 
                     padding: "5px", 
-                    borderRadius: "10px"}}>
+                    borderRadius: "10px",
+			color: "black"}}>
           {question}
         </h1>
         <ul className="text-l mb-2 text-left"
            style={{backgroundColor:"white", 
                   padding: "5px", 
                   borderRadius: "10px", 
-                  width: "fit-content"}}>
+                  width: "fit-content",
+		color: "black"}}>
           Click on the number line to move the character to the answer. 
           Ask youself:<br></br>
           <li>1. Is this a subtraction or an addition?</li>
