@@ -1,13 +1,21 @@
 "use client";
-import NumberLine from "@/components/number_line";
-import CharComponent from "@/components/char_component";
-import { useState } from "react";
+import React, { useState } from "react";
+import useSound from 'use-sound';
 
 export default function Page() {
   const numbers = Array.from({ length: 41 }, (_, i) => i - 20); // [-20...20]
   const [charIndex, setCharIndex] = useState(20); // Start at zero
   const [question, setQuestion] = useState("Add and Subtract Integers Exercises");
   const [correctAnswer, setCorrectAnswer] = useState(0);
+
+  const [play, { stop }] = useSound("/bgm_9am.mp3", { volume: 0.2, loop: false });
+
+  React.useEffect(() => {
+    play();
+    return () => {
+      stop(); // Stop previous sound instance on unmount or refresh
+    };
+  }, [play, stop]);
 
   const moveStacy = (num: number) => {
     setCharIndex(num + 20); // Adjust index to match array position
@@ -32,14 +40,13 @@ export default function Page() {
     }
   }
   return (
-    <main className="flex min-h-screen flex-col items-center justify-top p-10"
+    <main className="flex min-h-screen flex-col items-center justify-top p-5"
           style={{backgroundColor: "#f0f8ff",
               backgroundImage: "url('/background1.jpg')",
               backgroundSize: "cover",
               backgroundRepeat: "no-repeat",
-              backgroundPosition: "center",}}
-    >
-      <div className = "absolute flex-col items-center mb-10">
+              backgroundPosition: "center"}}>
+      <div className = "absolute flex-col items-center mb-5">
         <h1 className="text-2xl mb-4 text-center"
             style={{fontWeight: "bold", 
                     backgroundColor:"white", 
@@ -47,7 +54,7 @@ export default function Page() {
                     borderRadius: "10px"}}>
           {question}
         </h1>
-        <p className="text-l mb-4 text-left"
+        <ul className="text-l mb-4 text-left"
            style={{backgroundColor:"white", 
                   padding: "5px", 
                   borderRadius: "10px", 
@@ -58,27 +65,27 @@ export default function Page() {
           <li>2. Which direction should Stacy move in?</li>
           <li>3. Is the second number a positive or a negative? Should Stacy U-turn?</li>
           <li>4. By how many steps should Stacy move by?</li>
-        </p>
+        </ul>
       </div>
 
       {/* Character Component */}
-      <div className="absolute flex-col items-center mb-10">
+      <div className="absolute flex-col items-center mb-5">
         {/*Character Image*/}
-        <div className="flex flex-col items-center mt-10 relative">
+        <div className="flex flex-col items-center mt-5 relative">
           <img
             src="/char.png"
             alt="Character"
-            style={{ width: "187.5px", height: "333px",
+            style={{ width: "150.5px", height: "266.4px",
               left: `calc(${(charIndex / 40) * 100}% - 93.75px)`, // 93.75px is half the image width
               position: "absolute",
-              bottom:"-450px"
+              bottom:"-400px"
             }}
             className=""
           />
         </div>
 
         {/*Number Line*/}
-        <div className="relative w-[1600px] h-16 border-t-2 border-black  mt-[410px]"
+        <div className="relative w-[1200px] h-16 border-t-2 border-black  mt-[360px]"
             style={{ backgroundColor: "#e0ffff", 
                     borderRadius: "10px" }}>
           {/* Divide tick marks into columns */}
@@ -109,7 +116,7 @@ export default function Page() {
       </div>
 
       {/* Button*/}
-      <div className="absolute flex items-center justify-center mt-[600px]">
+      <div className="absolute flex items-center justify-center mt-[450px]">
         <button 
           className="mb-4 px-4 py-2 bg-red-500 text-white rounded hover:border-4 hover:border-black"
           style={{width: "fit-content", 
