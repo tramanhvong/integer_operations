@@ -143,7 +143,7 @@ export default function Page() {
                 fontSize: "30px",
                   fontWeight:"bold"}}
         onClick = {() => redirectToFeedback()}
-      >Give me some Feedback 𐔌՞꜆.  ̫.꜀՞𐦯</button>
+      >gimme some feedback 𐔌՞꜆.  ̫.꜀՞𐦯</button>
     </main>
   );
 }
