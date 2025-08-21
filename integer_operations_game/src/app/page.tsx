@@ -126,6 +126,11 @@ export default function Page() {
           onClick = {() => generateQuestion()}
         >GENERATE QUESTION</button>
       </div>
+
+      {/*Survey Button*/}
+      <div className="absolute flex items-center justify-center mt-[520px]">
+        <a href="https://forms.gle/3b1d8c4f">GIVE ME SOME FEEDBACK!</a>
+      </div>
     </main>
   );
 }
