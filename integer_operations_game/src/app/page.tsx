@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import useSound from 'use-sound';
+import { Analytics } from "@vercel/analytics/next"
 
 export default function Page() {
   const numbers = Array.from({ length: 41 }, (_, i) => i - 20); // [-20...20]
