@@ -39,6 +39,12 @@ export default function Page() {
       setCharIcon("/wrong_answer.png");
     }
   }
+
+  const redirectToFeedback = () => {
+    window.location.href = "https://forms.gle/KZhAjrEjzotgpjNY9"; // Replace with your feedback form URL
+  }
+
+
   return (
     <main className="flex min-h-screen flex-col items-center justify-top p-5"
           style={{backgroundColor: "#f0f8ff",
@@ -130,9 +136,14 @@ export default function Page() {
       </div>
 
       {/*Survey Button*/}
-      <div className="absolute flex items-center justify-center mt-[520px]">
-        <a href="https://forms.gle/3b1d8c4f">GIVE ME SOME FEEDBACK!</a>
-      </div>
+      <button 
+        className="mb-4 px-4 py-2 bg-red-500 text-white rounded hover:border-4 hover:border-black mt-[550px]"
+        style={{width: "fit-content", 
+                height: "fit-content", 
+                fontSize: "30px",
+                  fontWeight:"bold"}}
+        onClick = {() => redirectToFeedback()}
+      >Give me some Feedback 𐔌՞꜆.  ̫.꜀՞𐦯</button>
     </main>
   );
 }
